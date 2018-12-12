@@ -1,0 +1,27 @@
+/*
+    IMPORT
+*/
+// @import "./import/**/*";
+/*
+    COMPONENTS
+*/
+// @import "./components/*";
+/*
+    LAYOUTS
+*/
+//  @import "./layouts/**/*";
+ @import "./layouts/page.scss";
+ @import "./layouts/fonts.scss";
+
+
+ @import "./theme/style.scss";
+ @import "./theme/theme1.scss";
+/*
+    ORGIN
+*/
+// @import "./origin/**/*";
+
+
+.checkin{
+    float: right;
+}
