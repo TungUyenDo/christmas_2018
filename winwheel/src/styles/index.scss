@@ -186,7 +186,6 @@ img {
 //     height: 500px;
 //     width: 500px;
 // }
-
 canvas {
     border: 10px #fdfdfa; // background: #fff;
     border-style: solid;
@@ -201,4 +200,16 @@ canvas {
     left: 50%;
     transform: translateX(-50%);
     z-index: -1;
+}
+
+.nameAndPic {
+    img {
+        max-width: 70px;
+        margin: 0;
+        display: inline-block;
+        border-radius: 50%
+    }
+    span{
+        padding-left: 12px;
+    }
 }

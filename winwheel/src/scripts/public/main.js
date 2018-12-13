@@ -1,3 +1,6 @@
+
+var time_on_modal = 5000;
+
 var arrItem = [
     {
         id: 0,
@@ -231,7 +234,8 @@ function getSegments(data) {
             segments.push({
                 id: item.id,
                 text: item.lucky_number.toString(),
-                name: item.name
+                name: item.name,
+                image:item.image
             })
         });
 
@@ -283,9 +287,24 @@ $("#spin").on("click", function (e) {
         // Make the winning one yellow.
         theWheel.segments[segmentCurrent].fillStyle = 'yellow';
 
-        $('.person-successful').html(segment.name);
+        $('.person-successful.number').html(segment.text).css({
+            'font-size': 100,
+            'opacity':1,
+            'transition':'all 0.5s'
+        });
+
+        $('.person-successful.nameAndPic').html('');
+
+        setTimeout(() => {
+            $('.person-successful.number').html('');
+
+            $('.person-successful.nameAndPic').html('<img src="' + segment.image + '">' + '<span>' + segment.name + '</span>').css({
+                'opacity': 1,
+                'transition': 'all 0.5s',
+            });
+        }, time_on_modal);
         
-        console.log("\nid:" + segment.id, '\n lucky_number:' + segment.text, '\n Name:' + segment.name);
+        console.log("\nid:" + segment.id, '\n lucky_number:' + segment.text, '\n Name:' + segment.name, segment.image);
     }
 
 });
